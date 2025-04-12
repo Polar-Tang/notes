@@ -2,8 +2,9 @@ https://github.com/OWASP/crAPI
 --------
 **Machine name**: reqres.in
 **Difficulty**: sperm (extremly easy)
-**Vulnerability**: BOLA
+**CWE-list**: 
 
+-------
 ### Recon
 - Identify the web
 	![[Pasted image 20241029190455.png]]

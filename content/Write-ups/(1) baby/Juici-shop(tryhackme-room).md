@@ -1,3 +1,13 @@
+---
+tags:
+---
+
+**Machine name**: reqres.in
+**Difficulty**: sperm (extremly easy)
+**CWE-list**: 
+
+-----
+
 This was done by following the steps on https://tryhackme.com/r/room/owaspjuiceshop, there is much better explained everything, so i recomend to do it from here and if you want it you could check the comands i use to do it, which differ a lil bit from those on the page
 ### Recon
 Go through the UI with burpsuite growing the HTTP history

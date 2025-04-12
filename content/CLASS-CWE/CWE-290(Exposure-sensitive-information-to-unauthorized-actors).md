@@ -1,0 +1,21 @@
+https://cwe.mitre.org/data/definitions/200.html
+The product exposes sensitive information to an actor that is not authorized to that information
+
+| Nature    | Type                                                       | ID                                                       | Name                                                                            |
+| --------- | ---------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ChildOf   | ![Class](https://cwe.mitre.org/images/icons/class.gif)     | [668](https://cwe.mitre.org/data/definitions/668.html)   | Exposure of Resource to Wrong Sphere                                            |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [201](https://cwe.mitre.org/data/definitions/201.html)   | Insertion of Sensitive Information Into Sent Data                               |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [203](https://cwe.mitre.org/data/definitions/203.html)   | Observable Discrepancy                                                          |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [209](https://cwe.mitre.org/data/definitions/209.html)   | [[CWE-209(error-message-containing-sensitive-information)]]                     |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [213](https://cwe.mitre.org/data/definitions/213.html)   | Exposure of Sensitive Information Due to Incompatible Policies                  |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [215](https://cwe.mitre.org/data/definitions/215.html)   | Insertion of Sensitive Information Into Debugging Code                          |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [359](https://cwe.mitre.org/data/definitions/359.html)   | Exposure of Private Personal Information to an Unauthorized Actor               |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [497](https://cwe.mitre.org/data/definitions/497.html)   | Exposure of Sensitive System Information to an Unauthorized Control Sphere      |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [538](https://cwe.mitre.org/data/definitions/538.html)   | Insertion of Sensitive Information into Externally-Accessible File or Directory |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [1258](https://cwe.mitre.org/data/definitions/1258.html) | Exposure of Sensitive System Information Due to Uncleared Debug Information     |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [1273](https://cwe.mitre.org/data/definitions/1273.html) | Device Unlock Credential Sharing                                                |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [1295](https://cwe.mitre.org/data/definitions/1295.html) | Debug Messages Revealing Unnecessary Information                                |
+| ParentOf  | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [1431](https://cwe.mitre.org/data/definitions/1431.html) | Driving Intermediate Cryptographic State/Results to Hardware Module Outputs     |
+| CanFollow | ![Variant](https://cwe.mitre.org/images/icons/variant.gif) | [498](https://cwe.mitre.org/data/definitions/498.html)   | Cloneable Class Containing Sensitive Information                                |
+| CanFollow | ![Variant](https://cwe.mitre.org/images/icons/variant.gif) | [499](https://cwe.mitre.org/data/definitions/499.html)   | Serializable Class Containing Sensitive Data                                    |
+| CanFollow | ![Base](https://cwe.mitre.org/images/icons/base.gif)       | [1272](https://cwe.mitre.org/data/definitions/1272.html) | Sensitive Information Uncleared Before Debug/Power State Transition             |

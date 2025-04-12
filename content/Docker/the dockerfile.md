@@ -131,3 +131,8 @@ CMD ["npm", "start"]
 
 ---
 
+#### Has no installation candidate
+To avoid this issue we could add this line in the docker file 
+```dockerfile
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32 871920D1991BC93C
+```

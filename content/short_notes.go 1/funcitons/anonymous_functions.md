@@ -20,7 +20,7 @@ func main() {
 	// newX is 2, newY is 4, newZ is 6
 }
 ```
-Or instead of that we could use a anonymous function, and define the simple function right in the argument:
+Or instead of that we could use a anonymous function, and define the simple function right in the argument, which wouldn't be called:
 ```go
 func main() {
     // using an anonymous function

@@ -5,7 +5,7 @@ go doSomething()
 ```
 
 - **Without `go`**: The program runs sequentially.
-- **With `go`**: `printMessage("Goroutine Call")` runs concurrently.
+- **With `go`**: runs concurrently.
 
 #### For example
 You could see here that when we add the "go" keyword to the function it executes in the background and the others function like "count("fish")"do not wait to the order to finish 
@@ -45,7 +45,7 @@ func main() {
 ```
 - The part `func(file api.FileInfo)` defines an **anonymous function** that accepts an argument of type `api.FileInfo`.
 - At the end, `(fileInfo)` **calls the anonymous function** with `fileInfo` as the argument.
-But it's actually more safe to utilize [[markdown/short_notes.go 1/concurrency/go-routine/chan]]els for  type to comunication
+But it's actually more safe to utilize [[chan]]els for  type to comunication
 ```go
   func main() {
     c := make(chan string) // initialize it

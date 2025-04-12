@@ -50,6 +50,87 @@ func main() {
 }
 
 ```
+
+#### Example of usage
+```go
+package main
+
+type Message interface {
+        Type() string
+}
+
+type TextMessage struct {
+        Sender  string
+        Content string
+}
+
+func (tm TextMessage) Type() string {
+        return text
+}
+
+type MediaMessage struct {
+        Sender    string
+        MediaType string
+        Content   string
+}
+
+func (mm MediaMessage) Type() string {
+        return media
+}
+
+type LinkMessage struct {
+        Sender  string
+        URL     string
+        Content string
+}
+
+func (lm LinkMessage) Type() string {
+        return link
+}
+
+// Don't touch above this line
+
+func filterMessages(messages []Message, filterType string) []Message {
+        var filteredMessages []Message
+        for _, msg := range messages {
+                if msg.Type() == filterType {
+                        filteredMessages = append(filteredMessages, msg)
+                }
+        }
+        return filteredMessages
+}
+
+```
+#### Receiver with args
+```go
+type User struct {
+	Name string
+	Membership
+}
+
+type Membership struct {
+	Type string
+	MessageCharLimit int
+}
+
+func (u User) SendMessage(msg string, msglen int) (string, bool) {
+	if msglen <= u.Membership.MessageCharLimit {
+		return msg, true
+	}
+	return "", false
+}
+  
+func newUser(name string, membershipType string) User {
+	membership := Membership{Type: membershipType}
+	if membershipType == "premium" {
+		membership.MessageCharLimit = 1000
+	} else {
+		membership.Type = "standard"
+		membership.MessageCharLimit = 100
+	}
+	return User{Name: name, Membership: membership}
+}
+```
 As you may see the interface is implicit, there's nothing inside the interface that specify which thing will use it. Actually is the function, when i do `(r rect)` that's what binds the interface, the `area` function, to the `rect` type.
 The receiver `(r rect)` in Go plays the role of `self` in Python or `this` in Java.
 ```python

@@ -3,5 +3,5 @@ npm install --save-dev tsx
 ```
 
 ```bash
-npx --watch tsx server.ts
+npx tsx --watch server.ts
 ```

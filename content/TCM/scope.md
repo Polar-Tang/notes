@@ -1,0 +1,2 @@
+- Defines the range of assets that the organization is explicitly inviting security researchers to assets for vulnerabilities
+- OUt of scope, aout of the limit to testes

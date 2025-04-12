@@ -47,6 +47,7 @@ The same syntax could be used to initialize a zero value:
 m = map[string]int{}
 ```
 ###### Get an example
+To declare a item of time struct, you should use the struct type in the initialization of the new map item
 ```go
 func getUserMap(names []string, phoneNumbers []int) (map[string]user, error) {
     if len(names) != len(phoneNumbers) {

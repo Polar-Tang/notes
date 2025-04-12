@@ -1,6 +1,4 @@
-Sources:
-- https://tryhackme.com/r/room/dnsindetail
-- https://www.boot.dev/
+
 
 ----------
 
@@ -16,6 +14,8 @@ resolve IPv4 addresses, for example 104.26.10.229
 ```sh
 nslookup --type=A example.com
 ```
+#### PTR
+The inverse process of this is a reverse DNS lookup, which proportionate the IP address based on the host name
 ##### AAAA
 resolve to IPv6 addresses, for example 2606:4700:20::681a:be5, 
 ##### CNAME
@@ -73,3 +73,9 @@ The Authoritative DNS server holds all the records for a domain, they store the 
 
 ### Recursive DNS Server Caching
 To optimize efficiency, the recursive DNS server caches the response based on its **Time To Live (TTL)** value. The cached record can then be quickly used to answer subsequent requests without querying the root and TLD servers again until the TTL expires.
+
+-----
+Sources:
+- https://tryhackme.com/r/room/dnsindetail
+- https://www.boot.dev/
+- https://www.cloudflare.com/es-es/learning/dns/dns-records/dns-ptr-record/

@@ -41,4 +41,4 @@ In fact the logic flaw vulnerabillities will require an to understand the applic
 - If I can’t register an email with `@dontwannacry` in registration, does this restriction also apply to updates? Could I inject the restricted value through another method?
 - Always ask whether you’re authorized to perform each action. If you can register an account, does updating your data enforce the same controls? (like [[Broken_authorization]] in some Portswigger labs)
 - You could intercept every request and analyze it to see if there are hidden parameters or ones that could be tampered with
-- COmpare different response by changing certain paramters, values, url fragmes, like [[lab-password-reset-broken-logic]]
+- COmpare different response by changing certain paramters, values, url fragmes, like [[lab-password-reset-broken-logic-2]]
