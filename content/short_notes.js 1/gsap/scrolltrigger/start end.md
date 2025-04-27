@@ -11,9 +11,18 @@ Seeing the markers and look to this example:
 ```js
 start: "top center"
 ```
-Whent the top marker is in the center the scroll-element is triggered.
+When the top marker is in the center the scroll-element is triggered.
 The end indicates where the animation.
+### Example
+```js
+start: "top bottom",
+end: "bottom top",
+```
+This means:
 
+- The **top of the target** (`aboutContainerRef.current`) reaches the **bottom** of the viewport → animation starts
+    
+- The **bottom of the target** reaches the **top** of the viewport → animation ends
 #### Measure for start and end
 We could also use percentage and pixels to get the value, which are always relative to the path.
 
