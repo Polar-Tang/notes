@@ -2,17 +2,56 @@
 tags:
 ---
 
-**Machine name**: reqres.in
+**Machine**: http://juice-shop.herokuapp.com/#/ | https://github.com/juice-shop/juice-shop
 **Difficulty**: sperm (extremly easy)
 **CWE-list**: 
 
 -----
 
-This was done by following the steps on https://tryhackme.com/r/room/owaspjuiceshop, there is much better explained everything, so i recomend to do it from here and if you want it you could check the comands i use to do it, which differ a lil bit from those on the page
-### Recon
-Go through the UI with burpsuite growing the HTTP history
+As this is an webshop we will wanbt to try this functionallities
+- Registration
+- Login
+- Buying an item
+- Possibly returning an item
+- Our wallet functionality if exists
+- Logic flaws
+- XSS
+    - Stored
+    - Reflected
+- Basket functionality
+- Adresses
+- IDORs
+- CSRF
+- Broken access control if we can get to admin functions
 
-### SQLI
+#### Prepare
+1. Open burpsuite
+2. Set up the scope for the target
+	![[Pasted image 20250427221451.png]]
+	- Set `juice-shop.herokuapp.com` or localhost as host
+3. Set up proxy configuration
+	![[Pasted image 20250427221756.png]]
+	![[Pasted image 20250427221852.png]]
+		This will make any hidden fields easier to see as it will unhide them and draw a big red square around them. If you see this big red square you know you are looking at a hidden field.
+
+#### Manually walking the application
+In this phase we need to get know how does the application works. We still are not sure if there are admin functionallities, but we know exists
+- Authencticated users 
+- Unathenticated users (not llogged in)
+
+
+### Registration
+Register using an attack vector that automatically tests for JS XSS, HTML injection and HTML tag attribute injection.
+`'"><u>hello`
+`'"><u>THE XSS RAT WAS HERE${7'*7'}`
+![[Pasted image 20250428180740.png]]
+When we look at the inspector we could see its broken.
+![[Pasted image 20250428180814.png]]
+##### Avatar image feature
+They accept an URL which may introduce a SSRF
+![[Pasted image 20250428181412.png]]
+	Try a self hosted url or a public burpcollaborator like `http://s5yf4ljmn9wgf95dcykd4iu7zy5otd.burpcollaborator.net/`
+#### LOGIN
 
 You log by default as an admin, so put this in the username field
 ```
@@ -23,7 +62,7 @@ Log as Bender
 bender@juice-sh.op'-- -
 ```
 
-### BOLA
+#### BOLA
 You could bruteforce that using wfuzz, redirecting the output to a file, but i'd prefer to send them to caido, as localhost:8081, and saw them on the HTTP history
 ```sh
 wfuzz -u http://10.10.96.201/rest/user/login -d '{"email":"admin@juice-sh.op","password":"FUZZ"}' -w /usr/share/wordlists/seclists/Passwords/Common-Credentials/best1050.txt -H "Content-Type: application/json" -p localhost:8081
@@ -89,3 +128,10 @@ http://10.10.20.11//#/score-board
 ```
 
 Hello dear team of TryHackMe, i start to do your rooms and i want to thank you because they are so useful and fun, is excellent content, however there's an issue in https://tryhackme.com/r/room/owaspjuiceshop room which i do not know if that is done in purspose, but the write up suggest me to do ip spoofing to trigger XSS with this payload `True-Client-IP: <iframe src="javascrip:alert(`xss`)"` but it's never triggered because it's scaped by the application, so i did `True-Client-IP: <img src=x onerror=alert('XSS')>` instead and the XSS alert get triggered successfully, but the flag never appear, even after load the root page, i don't know what's going wrong, so i wait for your answer. Many thanks for your time!
+
+`POST /api/Addresss/HTTP/1.1`
+>You successfully solved a challenge: Error Handling (Provoke an error that is neither very gracefully nor consistently handled.)
+
+#### Basket functionallity
+- Represents the workflo in a diagram
+	![[Pasted image 20250428180041.png]]
