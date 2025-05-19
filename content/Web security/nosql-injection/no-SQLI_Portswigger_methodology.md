@@ -1,6 +1,6 @@
-SQL injection si when you able to execute database commands from a backend server.
+An injection in the database means that an attacker is able to execute database commands from a backend server.
 ![[Pasted image 20241027171915.png]]
-This avaible you to:
+This available you to:
 - Bypass authentication or protection mechanisms.
 - Extract or edit data.
 - Cause a denial of service.
@@ -28,6 +28,7 @@ db.users.find({ "username": "user1", "password": { "$gt": "" } })
 ```
 As the pasword will be always greater than an empty string whis will return false. we'll retake on this later
 
+### Parsing
 ------
 ## Syntax Injection
 ### Testing for Syntax Injection 

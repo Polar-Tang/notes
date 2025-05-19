@@ -1,8 +1,8 @@
 https://portswigger.net/web-security/nosql-injection/lab-nosql-injection-detection
 The web application make queries to the database and retrieve all that data from there.
-So `/filter?category=Gifts` in the mongo db looks like (this means we will use **Syntax injection**)
+So `/filter?category=Gifts` in the mongo db looks like:
 ```js
-db.products.find({ category: "Gifts" })
+db.products.find({ category: '||true||' })
 ```
 #### See if it's vulnerable
 We confirm it's vulnerable to No-SQLI by sendind by causing an error
@@ -14,10 +14,12 @@ with the following payload being prossesed by the DB
 This cause an error wich is a strong indication that it is vulnerable, so we should detect what character cause the issue and if we send a single `'` we notice that this is causes the javascript error, because MongoDB treats everything inside `category` as a single input, so you need to include the string delimiters (`'`) to make it syntactically correct. So this will be a **Syntax Injection**
 #### Solving the lab
 So for this lab we need to bypass any category filtering, and retrieve all the data avaible. 
-To do this we 'd craft a query that will always return true, according to this case the payload is:
+To do so we'd craft a query that JavaScript will always evaluates as true:
 ```
-'||1||'
+'||true||'
 ```
+or true 
+
 but url encoded well look like this
 ```url
 https://0a160099035c95ee807021b300c400cf.web-security-academy.net/filter?category=Gifts%27%7c%7c%31%7c%7c%27

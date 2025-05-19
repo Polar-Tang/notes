@@ -1,7 +1,11 @@
-https://portswigger.net/web-security/authentication
-https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
+
+-----
+- **CWE** map: [[CWE-287(improper-authentication)]]
+- Sources:
+	https://portswigger.net/web-security/authentication
+	https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
 ### Authentication
-**Authentication** (**AuthN**) means the process of verify who you are in an application. it's a critical process on many application. Many of their vulnerabilities used to be [logic flaw](summary_logic_flaw), the logical issues use to be undetected by scanner tools and use to pass overlook . That's why we got to review the authentication flow and come up with [edge cases](https://en.wikipedia.org/wiki/Edge_case).
+**Authentication** (**AuthN**) means the process of verify who you are in an application. it's a critical process on many application. Many of their vulnerabilities used to be [logic flaw](summary_logic_flaw.md), the logical issues use to be undetected by scanner tools and use to pass overlook . That's why we got to review the authentication flow and come up with [edge cases](https://en.wikipedia.org/wiki/Edge_case).
 Basically authentication is "what you are", which is different from authorization which likely means "what you do" and to do more than what you are allowed to do, it would be a [[Broken_authorization]] issue
 ### Types
 nowadays this process rely in a lot of technologies, and there are 3 differents types.

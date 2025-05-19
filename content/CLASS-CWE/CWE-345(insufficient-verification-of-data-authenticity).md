@@ -1,0 +1,24 @@
+https://cwe.mitre.org/data/definitions/345.html
+
+The product does not verify the origin or authenticity of data 
+
+| Nature   | Type                                                           | ID                                                       | Name                                                                                                 |
+| -------- | -------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| ChildOf  | ![Pillar](https://cwe.mitre.org/images/icons/pillar.gif)       | [693](https://cwe.mitre.org/data/definitions/693.html)   | Protection Mechanism Failure                                                                         |
+| ParentOf | ![Class](https://cwe.mitre.org/images/icons/class.gif)         | [346](https://cwe.mitre.org/data/definitions/346.html)   | Origin Validation Error                                                                              |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [347](https://cwe.mitre.org/data/definitions/347.html)   | Improper Verification of Cryptographic Signature                                                     |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [348](https://cwe.mitre.org/data/definitions/348.html)   | Use of Less Trusted Source                                                                           |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [349](https://cwe.mitre.org/data/definitions/349.html)   | Acceptance of Extraneous Untrusted Data With Trusted Data                                            |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [351](https://cwe.mitre.org/data/definitions/351.html)   | Insufficient Type Distinction                                                                        |
+| ParentOf | ![Composite](https://cwe.mitre.org/images/icons/composite.gif) | [352](https://cwe.mitre.org/data/definitions/352.html)   | Cross-Site Request Forgery (CSRF)                                                                    |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [353](https://cwe.mitre.org/data/definitions/353.html)   | Missing Support for Integrity Check                                                                  |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [354](https://cwe.mitre.org/data/definitions/354.html)   | Improper Validation of Integrity Check Value                                                         |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [360](https://cwe.mitre.org/data/definitions/360.html)   | Trust of System Event Data                                                                           |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [494](https://cwe.mitre.org/data/definitions/494.html)   | Download of Code Without Integrity Check                                                             |
+| ParentOf | ![Variant](https://cwe.mitre.org/images/icons/variant.gif)     | [616](https://cwe.mitre.org/data/definitions/616.html)   | [[CWE-73(external-control-of-filename-path)]]                                                        |
+| ParentOf | ![Variant](https://cwe.mitre.org/images/icons/variant.gif)     | [646](https://cwe.mitre.org/data/definitions/646.html)   | [[CWE-646(reliance-on-filename)]]                                                                    |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [649](https://cwe.mitre.org/data/definitions/649.html)   | Reliance on Obfuscation or Encryption of Security-Relevant Inputs without Integrity Checking         |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [924](https://cwe.mitre.org/data/definitions/924.html)   | Improper Enforcement of Message Integrity During Transmission in a Communication Channel             |
+| ParentOf | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [1293](https://cwe.mitre.org/data/definitions/1293.html) | Missing Source Correlation of Multiple Independent Data                                              |
+| PeerOf   | ![Class](https://cwe.mitre.org/images/icons/class.gif)         | [20](https://cwe.mitre.org/data/definitions/20.html)     | Improper Input Validation                                                                            |
+| PeerOf   | ![Base](https://cwe.mitre.org/images/icons/base.gif)           | [1304](https://cwe.mitre.org/data/definitions/1304.html) | Improperly Preserved Integrity of Hardware Configuration State During a Power Save/Restore Operation |

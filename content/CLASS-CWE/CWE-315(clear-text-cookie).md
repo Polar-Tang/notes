@@ -11,4 +11,3 @@ setcookie ("userdata", $data);
 
 }
 ```
-THis weaknes could be scaled with a [[CWE-79(XSS)]] could allow an attacker to remotely copy the cookie.

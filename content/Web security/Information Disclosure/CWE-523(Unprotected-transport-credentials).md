@@ -1,5 +1,5 @@
 https://cwe.mitre.org/data/definitions/523.html
-Locing page does not use adequate measure to protect the credentials while they are transportin from the clien to the server
+Loging page does not use adequate measure to protect the credentials while they are transportin from the clien to the server
 
 | Nature    | Type                                                   | ID                                                     | Name                                           |
 | --------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------- |
