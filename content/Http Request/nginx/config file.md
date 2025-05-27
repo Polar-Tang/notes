@@ -1,11 +1,12 @@
 
+
 #### Config file def:
 The configuration in the nginx file are like instructions for our nginx proxy
 - the key value pairs used in nginx.conf are called directives
 - and the context are the blose which hold those directives
 #### **Example**
 #### Serving static html
-For the static files, these should be served from different local directories, tipically the html files are all saved in `/data/www` and `/data/mages` for the images. If we want to serve this static files we will need an [server](https://nginx.org/en/docs/http/ngx_http_core_module.html#server) block, inside an [http](https://nginx.org/en/docs/http/ngx_http_core_module.html#http) block with two locations blocks
+For the static files, these should be served from different local directories, tipically the html files are all saved in `/data/www` and `/data/images` for the images. If we want to serve this static files we will need a [server](https://nginx.org/en/docs/http/ngx_http_core_module.html#server) block, inside an [http](https://nginx.org/en/docs/http/ngx_http_core_module.html#http) block with two locations blocks
 ```nginx
 server {
 	server_name example.com
@@ -20,13 +21,14 @@ server {
 
 ## `location` directive
 https://nginx.org/en/docs/http/ngx_http_core_module.html#location
+Sets a configuration depending on the URI
 location first select the endpoint of the URI. All the htmls will be serve with /data/www as the root of the URI.
 Now in our nginx config, the html will be served in `http://localhost/` and the images in the `http://localhost/images/example.png`
 *note*:
 >`/var/log/nginx/access.log`it's a symbolic link (a pointer to another file or directory) to `/dev/stdout` if you're using docker and want to see this logs use `docker logs <container-name>` 
 
 #### Routing static files with react
-React routes all the endpoint in strange ways, because it's a SPA, we need to configure nginx for this behaviour, otherwise nginx will search literally for the specified endpoint:
+React routes all the endpoint in strange ways, because it's a SPA, we need to configure nginx for accordingly to the SPA behavior, otherwise nginx will search literally for the specified endpoint:
 ```sh
 "GET /login HTTP/1.1" 404 465 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" "-" 
 ```
@@ -54,7 +56,7 @@ server {
 A proxy is a server that receives requests, passes them to the proxies servers, retrieves the response from them, and sends them back to the clients.
 #### `listen` directive
 https://nginx.org/en/docs/http/ngx_http_core_module.html#listen
-For this we could declare the listen directive. The `listen` directive in an NGINX `server` block specifies the port on which NGINX will listen for incoming connections.
+For this we could declare the listen directive. The `listen` directive in a NGINX `server` block specifies the port on which NGINX will listen for incoming connections.
 ```nginx
 server {
 	listen 5000;
@@ -65,7 +67,7 @@ server {
 	}
 ```
 Here nginx will be listeng to the port 5000 instead of the port 80
-**Form example** here's listening to the port 8080 to serve files, and with the location / directive, is serving directly in the root of the url. And the root
+**Form example** here's listening to the port 5000 to serve files, and with the location / directive, is serving directly in the root of the url. And the root
 #### `proxy_pass`
 https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
 The `proxy_pass` directive sends the incoming request from the client to a different server (a proxy server).
@@ -92,7 +94,7 @@ You could set this in the server block, rather as a address or as a uri
 
 
 ### Upstream server
-Upstream server in nginx refers to the backend server that nginx proxies to
+Define a group of server that can be referenced later
 
 ### Load balancing
 To load balance our website we need to specify the number of worker process. The work processes are like the number of nginx instance, and this number use to be the number of the server cpu cores
